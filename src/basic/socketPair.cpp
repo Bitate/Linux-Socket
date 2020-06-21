@@ -5,6 +5,9 @@
 
 using namespace std;
 
+/**
+ * Demonstrate socketpair(), write(), read() system calls
+ */
 int main()
 {
     // socket pair
@@ -14,7 +17,7 @@ int main()
     int status = socketpair(AF_LOCAL, SOCK_STREAM, 0, s);
     if(status == -1)
     {
-        cout << "Fail to create socket pair" << endl;
+        cout << "Failed to create socket pair" << endl;
     }
 
     // print the socket file descriptors returned
@@ -27,7 +30,7 @@ int main()
     status = write(s[1], message.c_str(), message.size());
     if(status < 0)
     {
-        cout << "Fail to write to socket" << endl;
+        cout << "Failed to write to socket" << endl;
     }
     else
     {
@@ -38,7 +41,7 @@ int main()
     status = read(s[0], buffer, sizeof(buffer));
     if(status < 0)
     {
-        cout << "Fail to read from socket" << endl;
+        cout << "Failed to read from socket" << endl;
     }
     else
     {
@@ -50,14 +53,30 @@ int main()
     status = write(s[0], message.c_str(), message.size());
     if(status < 0)
     {
-        cout << "Fail to reply" << endl;
+        cout << "Failed to reply" << endl;
     }
     else
     {
         cout << "Reply: " << message << endl;
     }
 
-    // close two sockets
+    cout << endl;
+    cout << "We create a new pair of sockets again:" << endl;
+    int ss[2];
+    status = socketpair(AF_LOCAL, SOCK_STREAM, 0, ss);
+    if(status == -1)
+    {
+        cout << "Failed to create socket pair" << endl;
+    }
+    else
+    {
+        cout << "ss[0] is " << ss[0] << endl;
+        cout << "ss[1] is " << ss[1] << endl;
+    }
+    
+    // close two sockets pair
     close(s[0]);
     close(s[1]);
+    close(ss[0]);
+    close(ss[1]);
 }
