@@ -2,5 +2,17 @@ set(this Socket)
 
 project(${this})
 
-# TODO: Why cannot find files by using variables
-add_executable(${this} socket.cpp socket.hpp)
+set(Headers
+    client.hpp
+    server.hpp
+)
+
+set(Source 
+    client.cpp
+    server.cpp
+)
+
+add_library(${this} 
+    Headers
+    Source
+)

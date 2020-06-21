@@ -45,3 +45,4 @@
 /home/bitate/Linux-Socket/build/test/CMakeFiles/rebuild_cache.dir
 /home/bitate/Linux-Socket/build/test/CMakeFiles/edit_cache.dir
 /home/bitate/Linux-Socket/build/test/CMakeFiles/test.dir
+/home/bitate/Linux-Socket/build/test/CMakeFiles/socketTest.dir

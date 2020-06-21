@@ -563,7 +563,7 @@ build src/CMakeFiles/test.util: CUSTOM_COMMAND
 build src/test: phony src/CMakeFiles/test.util
 
 # =============================================================================
-# Object build statements for EXECUTABLE target Socket
+# Object build statements for STATIC_LIBRARY target Socket
 
 
 #############################################
@@ -579,19 +579,19 @@ build src/CMakeFiles/Socket.dir/socket.cpp.o: CXX_COMPILER__Socket ../src/socket
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target Socket
+# Link build statements for STATIC_LIBRARY target Socket
 
 
 #############################################
-# Link the executable src/Socket
+# Link the static library src/libSocket.a
 
-build src/Socket: CXX_EXECUTABLE_LINKER__Socket src/CMakeFiles/Socket.dir/socket.cpp.o
-  FLAGS = -g
+build src/libSocket.a: CXX_STATIC_LIBRARY_LINKER__Socket src/CMakeFiles/Socket.dir/socket.cpp.o
+  LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = src/CMakeFiles/Socket.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = src/Socket
-  TARGET_PDB = Socket.dbg
+  TARGET_FILE = src/libSocket.a
+  TARGET_PDB = Socket.a.dbg
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -676,9 +676,42 @@ build test/CMakeFiles/test.util: CUSTOM_COMMAND
 build test/test: phony test/CMakeFiles/test.util
 
 # =============================================================================
+# Object build statements for EXECUTABLE target socketTest
+
+
+#############################################
+# Order-only phony target for socketTest
+
+build cmake_object_order_depends_target_socketTest: phony || cmake_object_order_depends_target_Socket cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+
+build test/CMakeFiles/socketTest.dir/socketTest.cpp.o: CXX_COMPILER__socketTest ../test/socketTest.cpp || cmake_object_order_depends_target_socketTest
+  DEP_FILE = test/CMakeFiles/socketTest.dir/socketTest.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I../test/../src -isystem ../googletest/googletest/include -isystem ../googletest/googletest
+  OBJECT_DIR = test/CMakeFiles/socketTest.dir
+  OBJECT_FILE_DIR = test/CMakeFiles/socketTest.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target socketTest
+
+
+#############################################
+# Link the executable test/socketTest
+
+build test/socketTest: CXX_EXECUTABLE_LINKER__socketTest test/CMakeFiles/socketTest.dir/socketTest.cpp.o | lib/libgtest_maind.a src/libSocket.a lib/libgtestd.a || lib/libgtest_maind.a lib/libgtestd.a src/libSocket.a
+  FLAGS = -g
+  LINK_LIBRARIES = lib/libgtest_maind.a  src/libSocket.a  lib/libgtestd.a  -lpthread
+  OBJECT_DIR = test/CMakeFiles/socketTest.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = test/socketTest
+  TARGET_PDB = socketTest.dbg
+
+# =============================================================================
 # Target aliases.
 
-build Socket: phony src/Socket
+build Socket: phony src/libSocket.a
 
 build gmock: phony lib/libgmockd.a
 
@@ -688,6 +721,8 @@ build gtest: phony lib/libgtestd.a
 
 build gtest_main: phony lib/libgtest_maind.a
 
+build libSocket.a: phony src/libSocket.a
+
 build libgmock_maind.a: phony lib/libgmock_maind.a
 
 build libgmockd.a: phony lib/libgmockd.a
@@ -695,6 +730,8 @@ build libgmockd.a: phony lib/libgmockd.a
 build libgtest_maind.a: phony lib/libgtest_maind.a
 
 build libgtestd.a: phony lib/libgtestd.a
+
+build socketTest: phony test/socketTest
 
 # =============================================================================
 # Folder targets.
@@ -732,14 +769,14 @@ build googletest/googletest/all: phony lib/libgtest_maind.a lib/libgtestd.a
 #############################################
 # Folder: /home/bitate/Linux-Socket/build/src
 
-build src/all: phony src/Socket
+build src/all: phony src/libSocket.a
 
 # =============================================================================
 
 #############################################
 # Folder: /home/bitate/Linux-Socket/build/test
 
-build test/all: phony
+build test/all: phony test/socketTest
 
 # =============================================================================
 # Built-in targets

@@ -27,5 +27,11 @@
   "directory": "/home/bitate/Linux-Socket/build",
   "command": "/bin/g++-9    -g   -o src/CMakeFiles/Socket.dir/socket.cpp.o -c /home/bitate/Linux-Socket/src/socket.cpp",
   "file": "/home/bitate/Linux-Socket/src/socket.cpp"
+},
+
+{
+  "directory": "/home/bitate/Linux-Socket/build",
+  "command": "/bin/g++-9   -I../test/../src -isystem ../googletest/googletest/include -isystem ../googletest/googletest  -g   -o test/CMakeFiles/socketTest.dir/socketTest.cpp.o -c /home/bitate/Linux-Socket/test/socketTest.cpp",
+  "file": "/home/bitate/Linux-Socket/test/socketTest.cpp"
 }
 ]

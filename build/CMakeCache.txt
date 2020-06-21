@@ -342,6 +342,12 @@ gtest_hide_internal_symbols:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
 
+//Value Computed by CMake
+socketTest_BINARY_DIR:STATIC=/home/bitate/Linux-Socket/build/test
+
+//Value Computed by CMake
+socketTest_SOURCE_DIR:STATIC=/home/bitate/Linux-Socket/test
+
 
 ########################
 # INTERNAL cache entries
