@@ -4,7 +4,15 @@ set(this socketTest)
 
 project(${this})
 
-add_executable(${this} socketTest.cpp)
+set(Source 
+    serverTest.cpp
+    clientTest.cpp
+)
+
+add_executable(${this} 
+    ${Source}
+)
+
 target_include_directories(${this} PUBLIC ../src)
 target_link_libraries(${this}
     gtest_main

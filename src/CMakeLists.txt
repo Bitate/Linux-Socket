@@ -13,6 +13,6 @@ set(Source
 )
 
 add_library(${this} 
-    Headers
-    Source
+    ${Headers}
+    ${Source}
 )
