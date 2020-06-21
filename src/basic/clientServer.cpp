@@ -27,7 +27,7 @@ int main()
 
     // child pid, here refers to client
     pid_t childPID = fork();
-    if( childPID == (pid_t) - 1)
+    if( childPID == (pid_t) -1)
     {
         cout << "Failed to fork int two processes" << endl;
         exit(1);
@@ -105,7 +105,7 @@ int main()
         {
             close(s[0]);
 
-            // wait for child process to exit.
+            // wait until child process has completed
             waitpid(childPID, &status, 0);
         }
         
