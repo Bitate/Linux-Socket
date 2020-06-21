@@ -1,0 +1,31 @@
+[
+{
+  "directory": "/home/bitate/Linux-Socket/build",
+  "command": "/bin/g++-9   -isystem ../googletest/googlemock/include -isystem ../googletest/googlemock -isystem ../googletest/googletest/include -isystem ../googletest/googletest  -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/bitate/Linux-Socket/googletest/googlemock/src/gmock_main.cc",
+  "file": "/home/bitate/Linux-Socket/googletest/googlemock/src/gmock_main.cc"
+},
+
+{
+  "directory": "/home/bitate/Linux-Socket/build",
+  "command": "/bin/g++-9   -I../googletest/googlemock/include -I../googletest/googlemock -isystem ../googletest/googletest/include -isystem ../googletest/googletest  -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/bitate/Linux-Socket/googletest/googlemock/src/gmock-all.cc",
+  "file": "/home/bitate/Linux-Socket/googletest/googlemock/src/gmock-all.cc"
+},
+
+{
+  "directory": "/home/bitate/Linux-Socket/build",
+  "command": "/bin/g++-9   -isystem ../googletest/googletest/include -isystem ../googletest/googletest  -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/bitate/Linux-Socket/googletest/googletest/src/gtest_main.cc",
+  "file": "/home/bitate/Linux-Socket/googletest/googletest/src/gtest_main.cc"
+},
+
+{
+  "directory": "/home/bitate/Linux-Socket/build",
+  "command": "/bin/g++-9   -I../googletest/googletest/include -I../googletest/googletest  -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/bitate/Linux-Socket/googletest/googletest/src/gtest-all.cc",
+  "file": "/home/bitate/Linux-Socket/googletest/googletest/src/gtest-all.cc"
+},
+
+{
+  "directory": "/home/bitate/Linux-Socket/build",
+  "command": "/bin/g++-9    -g   -o src/CMakeFiles/Socket.dir/socket.cpp.o -c /home/bitate/Linux-Socket/src/socket.cpp",
+  "file": "/home/bitate/Linux-Socket/src/socket.cpp"
+}
+]

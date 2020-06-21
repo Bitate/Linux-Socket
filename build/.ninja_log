@@ -1,0 +1,26 @@
+# ninja log v5
+0	171	1592661882177092447	build.ninja	9eb7df51650e15ad
+2	5224	1592661887413092096	googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	58430dcd5cb379df
+0	6421	1592661888609092027	googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o	1ca84ee3f93b17c2
+5225	6522	1592661888685092023	src/CMakeFiles/Socket.dir/socket.cpp.o	7c4d4ec1f0c3d9a3
+6523	7005	1592661889185091996	src/Socket	bc8dfc2116b31d40
+1	8548	1592661890737091915	googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o	eb1eae11b208d15f
+3	11264	1592661893441091789	googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	a6a835c361308692
+11264	11400	1592661893577091783	lib/libgtestd.a	5aa302a9ab528f9b
+11402	11441	1592661893625091781	lib/libgtest_maind.a	932e994b6527f4c4
+11400	11465	1592661893645091780	lib/libgmockd.a	942e92345ab531a9
+11465	11507	1592661893689091778	lib/libgmock_maind.a	6716ce4764fdb117
+0	6	0	clean	a7c70eacb11a5051
+2	2832	1592661908901091266	googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	58430dcd5cb379df
+2	3721	1592661909793091242	googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o	1ca84ee3f93b17c2
+2833	3926	1592661909997091239	src/CMakeFiles/Socket.dir/socket.cpp.o	7c4d4ec1f0c3d9a3
+3926	4173	1592661910241091232	src/Socket	bc8dfc2116b31d40
+2	5899	1592661911969091190	googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o	eb1eae11b208d15f
+3	8631	1592661914697091128	googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	a6a835c361308692
+8631	8733	1592661914793091126	lib/libgtestd.a	5aa302a9ab528f9b
+8735	8780	1592661914849091124	lib/libgtest_maind.a	932e994b6527f4c4
+8733	8795	1592661914861091124	lib/libgmockd.a	942e92345ab531a9
+8795	8817	1592661914889091123	lib/libgmock_maind.a	6716ce4764fdb117
+1	270	1592702918773914524	build.ninja	9eb7df51650e15ad
+1	2193	1592702920977915751	src/CMakeFiles/Socket.dir/socket.cpp.o	7c4d4ec1f0c3d9a3
+2193	2855	1592702921641916503	src/Socket	bc8dfc2116b31d40
