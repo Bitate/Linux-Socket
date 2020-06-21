@@ -1,5 +1,4 @@
 #include <sys/socket.h>
-#include <sys/types.h>
 #include <unistd.h>
 #include <string>
 #include <iostream>
@@ -22,17 +21,17 @@ int main()
     cout << "s[0] is " << s[0] << endl;
     cout << "s[1] is " << s[1] << endl;
 
-    string content = "Hello";
+    string message = "Hello, I'm s[0]";
     char buffer[80];
     // write a message to socket s[1]
-    status = write(s[1], content.c_str(), content.size());
+    status = write(s[1], message.c_str(), message.size());
     if(status < 0)
     {
         cout << "Fail to write to socket" << endl;
     }
     else
     {
-        cout << "Wrote message \"" << content << "\" to s[1]" << endl;
+        cout << "Send: " << message << endl;
     }
 
     // read a message from socket s[0]
@@ -43,19 +42,19 @@ int main()
     }
     else
     {
-        cout << "Receive: \"" << buffer << endl;
+        cout << "Receive: " << buffer << endl;
     }
 
     // reply to s[1]
-    content = "Go away";
-    status = write(s[0], content.c_str(), content.size());
+    message = "Go away";
+    status = write(s[0], message.c_str(), message.size());
     if(status < 0)
     {
         cout << "Fail to reply" << endl;
     }
     else
     {
-        cout << "Reply: " << content << endl;
+        cout << "Reply: " << message << endl;
     }
 
     // close two sockets
