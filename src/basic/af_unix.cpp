@@ -39,7 +39,7 @@ int main()
     memset(&af_unix, 0, sizeof(af_unix));
 
     af_unix.sun_family = AF_UNIX;
-    strncpy(af_unix.sun_path, path_unix, sizeof(af_unix.sun_path) - 1);
+    strncpy(af_unix.sun_path, path_unix, (sizeof(af_unix.sun_path) - 1));
 
     len_unix = SUN_LEN(&af_unix);
 
