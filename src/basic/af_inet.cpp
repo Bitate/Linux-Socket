@@ -45,8 +45,8 @@ int main()
         failed("bind()");
 
     // print all of our bound sockets
-    system("netstat -pa --2>/dev/null | " 
-     "sed -n 'l,/^Proto/p;/af_inet/p' ");
+    // TODO: fix command error
+    system("netstat -pa --tcp 2>/dev/null");
 
     close(sock_inet);
 }

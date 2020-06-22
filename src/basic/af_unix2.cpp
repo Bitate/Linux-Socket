@@ -14,6 +14,7 @@ using namespace std;
 static void failed( string functionName)
 {
     perror(functionName.c_str());
+    exit(1);
 }
 
 
