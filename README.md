@@ -1,5 +1,5 @@
 # Linux Socket Programming Practices
-This repository is my learning log. I believe that `practice make perfect`.
+This repository is my learning log. I believe that `practice makes perfect`.
 
 # Enviroment
 * OS: Ubuntu Server 20.04 LTS
