@@ -1,11 +1,10 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.16)
 
-set(this Linux-Socket)
+project("linux_programming")
 
-project(${this})
-
-#enable_testing()
-#add_subdirectory(googletest)
+enable_testing()
+add_subdirectory(googletest)
 add_subdirectory(src)
 add_subdirectory(test)
+add_subdirectory(tlpi)
 
