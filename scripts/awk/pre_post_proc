@@ -1,0 +1,21 @@
+# This script shows the usage of BEGIN and END in awk script
+# Run it in terminal by typing `$awk -f pre_post_proc /etc/passwd`
+# See the output :-)
+
+# This is preprocessing
+BEGIN {
+    print    "Users and their corresponding home"
+    print    " Username \t  Homepath"
+    print    "_________ \t  ________"
+
+    FS=":"
+}
+
+{
+    print $1 "              " $6
+}
+
+# This is postprocessing
+END {
+    print "Printing Finished"
+}

@@ -4,7 +4,7 @@
 #include <sys/stat.h>
 #include "../lib/tlpi_hdr.h"
 
-static void usageError(const char progName, const char msg)
+static void usageError(const char* progName, const char* msg)
 {
     if(msg != NULL)
         fprintf(stderr, "%s", msg);
@@ -76,6 +76,6 @@ int main(int argc, char* argv[])
         errExit("msgget");
     
     printf("%d\n", msqid);
-    
+
     exit(EXIT_SUCCESS);
 }
