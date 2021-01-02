@@ -1,3 +1,4 @@
+# pre_post_proc stands for Pre/Post Processing.
 # This script shows the usage of BEGIN and END in awk script
 # Run it in terminal by typing `$awk -f pre_post_proc /etc/passwd`
 # See the output :-)
@@ -8,6 +9,7 @@ BEGIN {
     print    " Username \t  Homepath"
     print    "_________ \t  ________"
 
+    # File Separator
     FS=":"
 }
 
