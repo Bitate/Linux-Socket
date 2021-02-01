@@ -1,5 +1,6 @@
-build
-googletest
+build/
+googletest/
 .vscode
 .vs
 *.txt
+*.elf
