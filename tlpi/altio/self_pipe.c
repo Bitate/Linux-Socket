@@ -31,49 +31,67 @@ int main(int argc, char *argv[])
     struct timeval *pto;
     struct sigaction signal_action;
     char ch;
+
     /* ... Initialize 'timeout', 'read_fds', and 'nfds' for select() */
     if (pipe(pfd) == -1)
         exit(1);
 
-    FD_SET(pfd[0], &read_fds);     /* Add read end of pipe to 'read_fds' */
-    nfds = max(nfds, pfd[0] + 1);  /* And adjust 'nfds' if required */
+    /* Add read end of pipe to 'read_fds' */
+    FD_SET(pfd[0], &read_fds);
+
+    /* And adjust 'nfds' if required */
+    nfds = max(nfds, pfd[0] + 1);
+
     flags = fcntl(pfd[0], F_GETFL);
     if (flags == -1)
         exit(1);
-    flags |= O_NONBLOCK; /* Make read end nonblocking */
+    
+    /* Make read end nonblocking */
+    flags |= O_NONBLOCK; 
     if (fcntl(pfd[0], F_SETFL, flags) == -1)
         exit(1);
+
     flags = fcntl(pfd[1], F_GETFL);
     if (flags == -1)
         exit(1);
-    flags |= O_NONBLOCK; /* Make write end nonblocking */
+
+    /* Make write end nonblocking */
+    flags |= O_NONBLOCK; 
     if (fcntl(pfd[1], F_SETFL, flags) == -1)
         exit(1);
+
     sigemptyset(&signal_action.sa_mask);
-    signal_action.sa_flags = SA_RESTART; /* Restart interrupted read()s */
+
+    /* Restart interrupted read()s */
+    signal_action.sa_flags = SA_RESTART; 
     signal_action.sa_handler = handler;
     if (sigaction(SIGINT, &signal_action, NULL) == -1)
         exit(1);
-    while ((ready = select(nfds, &read_fds, NULL, NULL, pto)) == -1 &&
-           errno == EINTR)
-        continue;    /* Restart if interrupted by signal */
-    if (ready == -1) /* Unexpected error */
+
+    /* Restart if interrupted by signal */
+    while ((ready = select(nfds, &read_fds, NULL, NULL, pto)) == -1 && errno == EINTR)
+        continue;    
+
+    /* Unexpected error */
+    if (ready == -1) 
         exit(1);
+
+    /* Handler was called */
     if (FD_ISSET(pfd[0], &read_fds))
-    { /* Handler was called */
+    { 
         printf("A signal was caught\n");
         for (;;)
-        { /* Consume bytes from pipe */
+        {
+            /* Consume bytes from pipe */
             if (read(pfd[0], &ch, 1) == -1)
             {
                 if (errno == EAGAIN)
-                    break; /* No more bytes */
+                    break;   /* No more bytes */
                 else
                     exit(1); /* Some other error */
             }
             /* Perform any actions that should be taken in response to signal */
         }
     }
-    /* Examine file descriptor sets returned by select() to see
-which other file descriptors are ready */
+    /* Examine file descriptor sets returned by select() to see which other file descriptors are ready */
 }
