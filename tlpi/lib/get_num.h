@@ -1,7 +1,7 @@
 #ifndef GET_NUM_H
 #define GET_NUM_H
 
-#define GN_NONNEG 01    /* Value must be >= 0 */
+#define GN_NONNEG 01      /* Value must be >= 0 */
 #define GN_GT_0   02      /* Value must be > 0 */
 
 /* By default, integers are decimal */

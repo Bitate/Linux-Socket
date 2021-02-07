@@ -2,5 +2,4 @@ build/
 googletest/
 .vscode
 .vs
-*.txt
 *.elf
