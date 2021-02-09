@@ -3,6 +3,9 @@
  * This is a simplified cat(1), which maps the entire file named 
  * in its command-line argument, and then writes the contents of 
  * the mapping to standard output.
+ *
+ * Run this program:
+ *      $./mmcat file_path
  */
 #include "../lib/tlpi_hdr.h"
 #include <sys/mman.h>
