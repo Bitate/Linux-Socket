@@ -3,3 +3,5 @@ googletest/
 .vscode
 .vs
 *.elf
+*.exe
+*.out
