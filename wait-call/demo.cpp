@@ -15,7 +15,11 @@ int main()
 		exit(1);
 	}
 	else if(pid == 0)
-	{
+	{	
+		int status;
+		if(wait(&status) == -1)
+			cout << "Don't call wait() in child process" << endl;
+
 		cout << "This is child process with PID being " << getpid() << endl;
 		for(int i = 0; i < 10; ++i)
 			cout << "child is counting " << i << endl;
