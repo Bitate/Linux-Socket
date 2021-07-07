@@ -1,0 +1,5 @@
+#!/bin/bash
+
+g++ demo.cpp
+
+./a.out
