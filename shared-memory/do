@@ -1,5 +1,4 @@
 #!/bin/bash
 
-g++ demo.cpp
-
-./a.out
+g++ -g demo.cpp
+g++ -g demo1.cpp 
